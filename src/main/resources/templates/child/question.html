@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问卷调查</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../mui/css/mui.min.css">
+    <style type="text/css">
+			#list {
+				/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+				margin-top: -1px;
+			}
+		</style>
+</head>
+<body>
+<!--<header class="mui-bar mui-bar-nav">-->
+    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+    <!--<h1 class="mui-title">十堰市物业管理升级工程满意度问卷调查</h1>-->
+<!--</header>-->
+<div class="mui-content">
+    <form class="mui-input-group">
+        <div class="mui-card">
+            <h5 class="mui-content-padded">1.您所居住的小区是否具备以下设施？(可多选)</h5>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>A.监控</label>
+                <input name="checkbox" value="Item 1" type="checkbox" >
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>B.道闸</label>
+                <input name="checkbox" value="Item 2" type="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>C.门禁</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>D.宣传栏</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>E.物业管理用房</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+        </div>
+        <div class="mui-card">
+            <h5 class="mui-content-padded">2.您所居住的小区是否存在以下现象？(可多选)</h5>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>A.外墙老化脱落</label>
+                <input name="checkbox" value="Item 1" type="checkbox" >
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>B.道路破损严重</label>
+                <input name="checkbox" value="Item 2" type="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>C.公共管线老化</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>D.环境脏乱差</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>E.安全隐患</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+            <div class="mui-input-row mui-checkbox mui-left">
+                <label>F.没有</label>
+                <input name="checkbox" type="checkbox" typr="checkbox">
+            </div>
+        </div>
+        <div class="mui-card">
+            <h5 class="mui-content-padded">3.您所居住的小区是否已经成立业主委员会？(单选)</h5>
+            <div class="mui-input-row mui-radio mui-left">
+                <label>A.已经成立</label>
+                <input name="radio1" type="radio">
+            </div>
+            <div class="mui-input-row mui-radio mui-left">
+                <label>B.尚未成立</label>
+                <input name="radio1" type="radio" checked>
+            </div>
+        </div>
+    </form>
+    <!--<button type="button" class="mui-btn mui-btn-primary mui-btn-block">查看结果</button>-->
+    <button type="button" class="mui-btn mui-btn-block"><a href="submit">提交问卷</a></button>
+    <button type="button" class="mui-btn mui-btn-block"><a href="goQuestionResult">查看结果</a></button>
+</div>
+
+<script src="../mui/js/mui.min.js"></script>
+<script src="../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

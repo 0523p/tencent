@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>问卷结果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="../mui/css/mui.min.css">
+    <!--App自定义的css-->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/app.css" /> -->
+    <style>
+			.chart {
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+			}
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			h5:first-child {
+				margin-top: 15px;
+			}
+		</style>
+    <script src="../mui/js/mui.min.js"></script>
+</head>
+
+<body>
+<!--<header class="mui-bar mui-bar-nav">-->
+    <!--<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>-->
+    <!--<h1 class="mui-title">问卷统计结果</h1>-->
+<!--</header>-->
+<div class="mui-content">
+    <div class="mui-content-padded">
+        <h5>问卷统计结果</h5>
+        <div class="chart" id="barChart"></div>
+        <div class="chart" id="barChart1"></div>
+        <div class="chart" id="barChart2"></div>
+        <div class="chart" id="barChart3"></div>
+        <div class="chart" id="barChart4"></div>
+    </div>
+</div>
+
+<script src="../mui/js/echarts-all.js"></script>
+<script>
+			var getOption = function(chartType) {
+				var chartOption = {
+					legend: {
+						data: ['蒸发量', '降水量']
+					},
+					grid: {
+						x: 35,
+						x2: 10,
+						y: 30,
+						y2: 25
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						}
+					}],
+					series: [{
+						name: '蒸发量',
+						type: chartType,
+						data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+					}, {
+						name: '降水量',
+						type: chartType,
+						data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+					}]
+				};
+				return chartOption;
+			};
+			var byId = function(id) {
+				return document.getElementById(id);
+			};
+			var barChart = echarts.init(byId('barChart'));
+			barChart.setOption(getOption('bar'));
+			var barChart = echarts.init(byId('barChart1'));
+			barChart.setOption(getOption('bar'));
+			var barChart = echarts.init(byId('barChart2'));
+			barChart.setOption(getOption('bar'));
+			var barChart = echarts.init(byId('barChart3'));
+			barChart.setOption(getOption('bar'));
+			var barChart = echarts.init(byId('barChart4'));
+			barChart.setOption(getOption('bar'));
+		</script>
+</body>
+
+</html>

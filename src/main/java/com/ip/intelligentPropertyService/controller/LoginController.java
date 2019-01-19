@@ -30,5 +30,13 @@ public class LoginController {
     public String goContactUs() {
         return "child/contact_us";
     }
+    @RequestMapping("/goQuestion")
+    public String goQuestion() {
+        return "child/question";
+    }
+    @RequestMapping("/goQuestionResult")
+    public String goQuestionResult() {
+        return "child/questionResult";
+    }
 
 }
