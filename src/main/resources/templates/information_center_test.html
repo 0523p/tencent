@@ -15,14 +15,14 @@
 		</style>
 </head>
 <body>
-    <div id="slider" class="mui-slider">
+<div class="mui-content">
+
+    <div class="mui-slider">
         <div class="mui-slider-group mui-slider-loop">
-			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://127.0.0.1:8081/mui-master/examples/hello-mui/images/yuantiao.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8081/mui-master/examples/hello-mui/images/shuijiao.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8081/mui-master/examples/hello-mui/images/muwu.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8081/mui-master/examples/hello-mui/images/cbd.jpg" /></a></div>
-            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8081/mui-master/examples/hello-mui/images/yuantiao.jpg" /></a></div>
-			<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://127.0.0.1:8081/mui-master/examples/hello-mui/images/shuijiao.jpg" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8848/mui-master/examples/hello-mui/images/shuijiao.jpg" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8848/mui-master/examples/hello-mui/images/muwu.jpg" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8848/mui-master/examples/hello-mui/images/cbd.jpg" /></a></div>
+            <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8848/mui-master/examples/hello-mui/images/yuantiao.jpg" /></a></div>
         </div>
         <div class="mui-slider-indicator">
             <div class="mui-indicator mui-active"></div>
@@ -31,36 +31,36 @@
             <div class="mui-indicator"></div>
         </div>
     </div>
-<div class="mui-content">
+
     <ul class="mui-table-view mui-grid-view mui-grid-9">
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-home"></span>
-            <div class="mui-media-body">公告公示栏</div></a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="/goVillageInfo">
-            <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
-            <div class="mui-media-body">小区信息栏</div></a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-location"></span>
-            <div class="mui-media-body">业主注册登记</div></a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-search"></span>
-            <div class="mui-media-body">问卷调查</div></a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-phone"></span>
-            <div class="mui-media-body">业主注册登记</div></a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
-            <span class="mui-icon mui-icon-gear"></span>
-            <div class="mui-media-body">联系我们</div></a></li>
-    </ul>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="goBulletinBar">
+                <span class="mui-icon mui-icon-home"></span>
+                <div class="mui-media-body">公告公示栏</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="goVillageInfo">
+                <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+                <div class="mui-media-body">小区信息栏</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <span class="mui-icon mui-icon-location"></span>
+                <div class="mui-media-body">业主注册登记</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <span class="mui-icon mui-icon-search"></span>
+                <div class="mui-media-body">问卷调查</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                <span class="mui-icon mui-icon-phone"></span>
+                <div class="mui-media-body">业主注册登记</div></a></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="goContactUs">
+                <span class="mui-icon mui-icon-gear"></span>
+                <div class="mui-media-body">联系我们</div></a></li>
+        </ul>
 </div>
 
 <script src="../mui/js/mui.min.js"></script>
 <script src="../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
 <script>
-	var slider = mui('#slider');
-    slider.slider({
-      interval: 5000//自动轮播周期，若为0则不自动播放，默认为0；
+
+    mui('.mui-slider').slider({
+      interval: 3000//自动轮播周期，若为0则不自动播放，默认为0；
     });
 
 </script>

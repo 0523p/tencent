@@ -21,4 +21,14 @@ public class LoginController {
         return "child/village_info";
     }
 
+    @RequestMapping("/goBulletinBar")
+    public String bulletin_bar() {
+        return "child/bulletin_bar";
+    }
+
+    @RequestMapping("/goContactUs")
+    public String goContactUs() {
+        return "child/contact_us";
+    }
+
 }
