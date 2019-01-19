@@ -38,5 +38,8 @@ public class LoginController {
     public String goQuestionResult() {
         return "child/questionResult";
     }
-
+    @RequestMapping("/submit")
+    public String submit() {
+        return "child/test";
+    }
 }
