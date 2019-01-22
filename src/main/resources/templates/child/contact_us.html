@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" type="text/css" href="../mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="../../mui/css/mui.min.css">
     <style type="text/css">
 			#list {
 				/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
@@ -17,102 +17,93 @@
 <body>
 <div class="mui-content">
     <div class="mui-slider">
-        <div class="mui-slider-item"><a href="#"><img style="height: 165px" src="../../image/contact_us.jpg" /></a></div>
+        <div class="mui-slider-group mui-slider-loop" id="loop">
+        </div>
+        <div class="mui-slider-indicator" id="slider">
+        </div>
     </div>
-    <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
-        <li class="mui-table-view-cell">
-            <div style="display: inline-block">
-                <div class="oa-contact-cell mui-table">
-                    <div class="oa-contact-content mui-table-cell">
-                        <div class="mui-clearfix">
-                            <h4 class="oa-contact-name">济南总部</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="oa-contact-cell mui-table" style="padding-top: 5px">
-                    <div class="oa-contact-content mui-table-cell">
-                        <div class="mui-clearfix">
-                            <div style="display: inline-block">
-                                <span class="mui-icon mui-icon-home"></span>
-                            </div>
-                            <div style="display: inline-block">
-                                <h5 class="oa-contact-name">联系地址</h5>
-                            </div>
-                        </div>
-                        <p class="oa-contact-email mui-h6" style="margin-left: 30px;">
-                            山东省济南市历下区舜泰广场
-                        </p>
-                    </div>
-                </div>
-                <div class="oa-contact-cell mui-table" style="padding-top: 5px">
-                    <div class="oa-contact-content mui-table-cell">
-                        <div class="mui-clearfix">
-                            <div style="display: inline-block">
-                                <span class="mui-icon mui-icon-phone"></span>
-                            </div>
-                            <div style="display: inline-block">
-                                <h5 class="oa-contact-name">联系电话</h5>
-                            </div>
-                        </div>
-                        <p class="oa-contact-email mui-h6" style="margin-left: 30px;">
-                            0531-8888666
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div style="display: inline-block;margin-left: 60%;margin-top: -30%;position: absolute;">
-                <img style="height: 110px; width: 125px;" src="../../image/home_map1.jpg">
-            </div>
-        </li>
+    <ul class="mui-table-view mui-table-view-striped mui-table-view-condensed" id="ulobj">
 
-        <li class="mui-table-view-cell">
-            <div style="display: inline-block">
-                <div class="oa-contact-cell mui-table">
-                    <div class="oa-contact-content mui-table-cell">
-                        <div class="mui-clearfix">
-                            <h4 class="oa-contact-name">历下区分部</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="oa-contact-cell mui-table" style="padding-top: 5px">
-                    <div class="oa-contact-content mui-table-cell">
-                        <div class="mui-clearfix">
-                            <div style="display: inline-block">
-                                <span class="mui-icon mui-icon-home"></span>
-                            </div>
-                            <div style="display: inline-block">
-                                <h5 class="oa-contact-name">联系地址</h5>
-                            </div>
-                        </div>
-                        <p class="oa-contact-email mui-h6" style="margin-left: 30px;">
-                            山东省济南市历下区美莲广场
-                        </p>
-                    </div>
-                </div>
-                <div class="oa-contact-cell mui-table" style="padding-top: 5px">
-                    <div class="oa-contact-content mui-table-cell">
-                        <div class="mui-clearfix">
-                            <div style="display: inline-block">
-                                <span class="mui-icon mui-icon-phone"></span>
-                            </div>
-                            <div style="display: inline-block">
-                                <h5 class="oa-contact-name">联系电话</h5>
-                            </div>
-                        </div>
-                        <p class="oa-contact-email mui-h6" style="margin-left: 30px;">
-                            0531-8888555
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div style="display: inline-block;margin-left: 60%;margin-top: -30%;position: absolute;">
-                <img style="height: 110px; width: 125px;" src="../../image/home_map1.jpg">
-            </div>
-        </li>
     </ul>
 </div>
 
-<script src="../mui/js/mui.min.js"></script>
-<script src="../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
+<li class="mui-table-view-cell" style="display: none;" id="liobj">
+    <div style="display: inline-block">
+        <div class="oa-contact-cell mui-table">
+            <div class="oa-contact-content mui-table-cell">
+                <div class="mui-clearfix">
+                    <h4 class="oa-contact-name" id="name">济南总部</h4>
+                </div>
+            </div>
+        </div>
+        <div class="oa-contact-cell mui-table" style="padding-top: 5px">
+            <div class="oa-contact-content mui-table-cell">
+                <div class="mui-clearfix">
+                    <div style="display: inline-block">
+                        <span class="mui-icon mui-icon-home"></span>
+                    </div>
+                    <div style="display: inline-block">
+                        <h5 class="oa-contact-name">联系地址</h5>
+                    </div>
+                </div>
+                <p class="oa-contact-email mui-h6" id="address" style="margin-left: 30px;">
+                    山东省济南市历下区舜泰广场
+                </p>
+            </div>
+        </div>
+        <div class="oa-contact-cell mui-table" style="padding-top: 5px">
+            <div class="oa-contact-content mui-table-cell">
+                <div class="mui-clearfix">
+                    <div style="display: inline-block">
+                        <span class="mui-icon mui-icon-phone"></span>
+                    </div>
+                    <div style="display: inline-block">
+                        <h5 class="oa-contact-name">联系电话</h5>
+                    </div>
+                </div>
+                <p class="oa-contact-email mui-h6" id="phone" style="margin-left: 30px;">
+                    0531-8888666
+                </p>
+            </div>
+        </div>
+    </div>
+    <div style="display: inline-block;margin-left: 60%;margin-top: -30%;position: absolute;">
+        <img style="height: 110px; width: 125px;" src="../../image/home_map1.jpg">
+    </div>
+</li>
+
+<script src="../../lib/zui/lib/jquery/jquery.js"></script>
+<script src="../../mui/js/mui.min.js"></script>
+<script src="../../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/contact_us.js"></script>
+
+<script>
+
+    mui.ajax('/source/selectComanyInfo',{
+        dataType:'json',//服务器返回json格式数据
+        type:'post',//HTTP请求类型
+        timeout:10000,//超时时间设置为10秒；
+        headers:{'Content-Type':'application/json'},
+        success:function(data){
+            //服务器返回响应，根据响应结果，分析是否登录成功；
+            console.log(data);
+            $.each(data, function(i, child) {
+                var cNode = $('#liobj').clone(true);
+                cNode.css('display','block');
+                $('#ulobj').append(cNode);
+            });
+
+            $.each(data, function(i, child) {
+                $("h4#name").eq(i).html(child.name)
+                $("p#address").eq(i).html(child.address)
+                $("p#phone").eq(i).html(child.phone)
+            });
+        },
+        error:function(xhr,type,errorThrown){
+            //异常处理；
+            console.log(type);
+        }
+    });
+</script>
 </body>
 </html>
