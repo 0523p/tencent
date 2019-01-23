@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ip.intelligentPropertyService.dao.SourceMapper">
+
+    <select id="selectComanyInfo" resultType="com.ip.intelligentPropertyService.entity.CompanyInfo">
+        select guid, name, address, phone, show_order as showOrder, create_time as createTime
+        from company_info
+        order by show_order
+    </select>
+
+    <select id="selectPicByPage" parameterType="java.lang.String" resultType="com.ip.intelligentPropertyService.entity.MenuPictureEntity">
+        select guid, menu, picture_id as pictureId, create_time as createTime
+        from menu_picture
+        where menu = #{menu}
+    </select>
+
+    <select id="selectFileByPrimaryKey" parameterType="java.lang.String" resultType="com.ip.intelligentPropertyService.entity.FileEntity">
+        select id, name, type, size, time, user, path, checksum
+        from t_file
+        where id = #{id}
+    </select>
+</mapper>
