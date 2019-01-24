@@ -5,6 +5,7 @@ import com.ip.intelligentPropertyService.common.CommonTools;
 import com.ip.intelligentPropertyService.entity.CompanyInfo;
 import com.ip.intelligentPropertyService.entity.FileEntity;
 import com.ip.intelligentPropertyService.entity.MenuPictureEntity;
+import com.ip.intelligentPropertyService.entity.VillageNotice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,11 +62,14 @@ public class SourceController {
 
     @RequestMapping("/selectPdf")
     public void selectPdf(HttpServletRequest request,  HttpServletResponse response) throws UnsupportedEncodingException {
+
+        String fileId = request.getParameter("fileId");
+        FileEntity file = sourceService.selectFileByPrimaryKey(fileId);
         response.reset();
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/vnd.ms-excel");
         try {
-            InputStream inputStream = new FileInputStream("D:\\opt\\20190122\\7ab5081e98e8401aa8154dfd01fe0a4b.dat");
+            InputStream inputStream = new FileInputStream(file.getPath());
             OutputStream os = response.getOutputStream();
             byte[] b = new byte[2048];
             int length;
@@ -78,6 +82,12 @@ public class SourceController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @RequestMapping("/selectVillageInfo")
+    public String selectVillageInfo() {
+        List<VillageNotice> records = sourceService.selectVillageInfo();
+        return CommonTools.objectToJson(records);
     }
 
 }

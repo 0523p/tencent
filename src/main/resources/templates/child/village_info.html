@@ -22,43 +22,26 @@
         <div class="mui-slider-indicator" id="slider">
         </div>
     </div>
-    <ul class="mui-table-view">
-        <li class="mui-table-view-cell mui-media">
-            <a href="javascript:;">
-                <img class="mui-media-object mui-pull-left" src="../../image/pdf.jpg">
-                <div class="mui-media-body">
-                    幸福
-                    <p class='mui-ellipsis'>能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-                </div>
-            </a>
-        </li>
-        <li class="mui-table-view-cell mui-media">
-            <a href="javascript:;">
-                <img class="mui-media-object mui-pull-left" src="../../image/pdf.jpg">
-                <div class="mui-media-body">
-                    木屋
-                    <p class='mui-ellipsis'>想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-                </div>
-            </a>
-        </li>
-        <li class="mui-table-view-cell mui-media">
-            <a href="javascript:;">
-                <div class="mui-table">
-                    <div class="mui-table-cell mui-col-xs-10">
-                        <img class="mui-media-object mui-pull-left" src="../../image/pdf.jpg">
-                        <div class="mui-media-body">
-                            关于拆迁通知
-                            <p class='mui-ellipsis'>拆迁办公室</p>
-                        </div>
-                    </div>
-                    <div class="mui-table-cell mui-col-xs-2 mui-text-right">
-                        <span class="mui-h5" style="margin-left: -20%">2019-01-22</span>
-                    </div>
-                </div>
-            </a>
-        </li>
+    <ul class="mui-table-view" id="ulobj">
     </ul>
 </div>
+
+<li class="mui-table-view-cell mui-media" style="display: none;" id="item">
+    <a href="/showPdf?fileId=4aafe593cf404792b2ea50c353d84772" id="href">
+        <div class="mui-table">
+            <div class="mui-table-cell mui-col-xs-10">
+                <img class="mui-media-object mui-pull-left" src="../../image/pdf.jpg">
+                <div class="mui-media-body" id="title">
+                    关于拆迁通知
+                </div>
+                <p class='mui-ellipsis' id="description">拆迁办公室</p>
+            </div>
+            <div class="mui-table-cell mui-col-xs-2 mui-text-right">
+                <span class="mui-h5" style="margin-left: -20%" id="date">2019-01-22</span>
+            </div>
+        </div>
+    </a>
+</li>
 
 <script src="../../lib/zui/lib/jquery/jquery.js"></script>
 <script src="../../mui/js/mui.min.js"></script>

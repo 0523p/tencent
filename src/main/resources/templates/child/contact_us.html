@@ -27,7 +27,7 @@
     </ul>
 </div>
 
-<li class="mui-table-view-cell" style="display: none;" id="liobj">
+<li class="mui-table-view-cell" style="display: none;" id="item">
     <div style="display: inline-block">
         <div class="oa-contact-cell mui-table">
             <div class="oa-contact-content mui-table-cell">
@@ -77,33 +77,5 @@
 <script src="../../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/contact_us.js"></script>
 
-<script>
-
-    mui.ajax('/source/selectComanyInfo',{
-        dataType:'json',//服务器返回json格式数据
-        type:'post',//HTTP请求类型
-        timeout:10000,//超时时间设置为10秒；
-        headers:{'Content-Type':'application/json'},
-        success:function(data){
-            //服务器返回响应，根据响应结果，分析是否登录成功；
-            console.log(data);
-            $.each(data, function(i, child) {
-                var cNode = $('#liobj').clone(true);
-                cNode.css('display','block');
-                $('#ulobj').append(cNode);
-            });
-
-            $.each(data, function(i, child) {
-                $("h4#name").eq(i).html(child.name)
-                $("p#address").eq(i).html(child.address)
-                $("p#phone").eq(i).html(child.phone)
-            });
-        },
-        error:function(xhr,type,errorThrown){
-            //异常处理；
-            console.log(type);
-        }
-    });
-</script>
 </body>
 </html>

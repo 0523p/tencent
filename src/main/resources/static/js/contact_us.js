@@ -7,8 +7,8 @@ $(function() {
         success:function(data){
             //服务器返回响应，根据响应结果，分析是否登录成功；
             $.each(data, function(i, child) {
-                var cNode = $('#liobj').clone(true);
-                cNode.css('display','block');
+                var cNode = $('#item').clone(true);
+                cNode.css('display', 'block');
                 $('#ulobj').append(cNode);
             });
 

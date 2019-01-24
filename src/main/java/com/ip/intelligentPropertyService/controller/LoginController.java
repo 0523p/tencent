@@ -1,7 +1,13 @@
 package com.ip.intelligentPropertyService.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class LoginController {
@@ -41,8 +47,10 @@ public class LoginController {
         return "child/test";
     }
 
-    @RequestMapping("/pdf")
-    public String getpdf() {
-        return "showpdf";
+    @RequestMapping("/showPdf")
+    public String getpdf(HttpServletRequest request, Model model) {
+        String fileId = request.getParameter("fileId");
+        model.addAttribute("fileId", fileId);
+        return "showPdf";
     }
 }

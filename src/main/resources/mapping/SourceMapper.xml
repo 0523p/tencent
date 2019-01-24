@@ -19,4 +19,11 @@
         from t_file
         where id = #{id}
     </select>
+
+    <select id="selectVillageInfo" resultType="com.ip.intelligentPropertyService.entity.VillageNotice">
+        select *
+        from village_notice
+        where flag = '0'
+        order by create_time desc
+    </select>
 </mapper>

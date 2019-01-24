@@ -4,6 +4,7 @@ import com.ip.intelligentPropertyService.dao.SourceMapper;
 import com.ip.intelligentPropertyService.entity.CompanyInfo;
 import com.ip.intelligentPropertyService.entity.FileEntity;
 import com.ip.intelligentPropertyService.entity.MenuPictureEntity;
+import com.ip.intelligentPropertyService.entity.VillageNotice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,10 @@ public class SourceService {
 
     public FileEntity selectFileByPrimaryKey(String id) {
         return sourceMapper.selectFileByPrimaryKey(id);
+    }
+
+    public List<VillageNotice> selectVillageInfo() {
+        return sourceMapper.selectVillageInfo();
     }
 
 }
