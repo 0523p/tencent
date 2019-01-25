@@ -5,28 +5,18 @@ $(function() {
         timeout:10000,//超时时间设置为10秒；
         headers:{'Content-Type':'application/json'},
         success:function(data){
+            var last = data[data.length - 1];
+            var html = '<div class="mui-slider-item"><a href="#"><img id="last" src="?" /></a></div>';
+            $('#loop').append(html);
+            var address = "http://" + window.location.host + "/source/loadPic?fileId=" + last.pictureId;
+            document.getElementById('last').src = address;
             if (data.length < 2) {
                 //小于两张图片 不轮询播放
-                var last = data[data.length - 1];
-                var html = '<div class="mui-slider-item"><a href="#"><img id="last" src="?" /></a></div>';
-                $('#loop').append(html);
-                var address = "http://" + window.location.host + "/source/loadPic?fileId=" + last.pictureId;
-                document.getElementById('last').src = address;
                 loadPic(data[data.length - 1]);
                 mui('.mui-slider').slider({
                     interval: 0//自动轮播周期，若为0则不自动播放，默认为0；
                 });
             } else {
-                //按照412341的顺序进行轮播
-                /*var lastItem = data[data.length - 1];
-                lastItem.guid = lastItem.guid.substring(10);
-                loadPic(lastItem);*/
-                var last = data[data.length - 1];
-                var html = '<div class="mui-slider-item"><a href="#"><img id="last" src="?" /></a></div>';
-                $('#loop').append(html);
-                var address = "http://" + window.location.host + "/source/loadPic?fileId=" + last.pictureId;
-                document.getElementById('last').src = address;
-
                 $.each(data, function(i, child) {
                     loadPic(child);
                     var indicator = '';
