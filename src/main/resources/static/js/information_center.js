@@ -7,7 +7,15 @@ $(function() {
         success:function(data){
             if (data.length < 2) {
                 //小于两张图片 不轮询播放
-                loadPic(data[0]);
+                var last = data[data.length - 1];
+                var html = '<div class="mui-slider-item"><a href="#"><img id="last" src="?" /></a></div>';
+                $('#loop').append(html);
+                var address = "http://" + window.location.host + "/source/loadPic?fileId=" + last.pictureId;
+                document.getElementById('last').src = address;
+                loadPic(data[data.length - 1]);
+                mui('.mui-slider').slider({
+                    interval: 0//自动轮播周期，若为0则不自动播放，默认为0；
+                });
             } else {
                 //按照412341的顺序进行轮播
                 /*var lastItem = data[data.length - 1];
@@ -38,10 +46,11 @@ $(function() {
                 $('#loop').append(html);
                 var address = "http://" + window.location.host + "/source/loadPic?fileId=" + first.pictureId;
                 document.getElementById('first').src = address;
+                mui('.mui-slider').slider({
+                    interval: 3000//自动轮播周期，若为0则不自动播放，默认为0；
+                });
             }
-            mui('.mui-slider').slider({
-                interval: 3000//自动轮播周期，若为0则不自动播放，默认为0；
-            });
+
         },
         error:function(xhr,type,errorThrown){
             //异常处理；
