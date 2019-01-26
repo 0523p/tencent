@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/source")
@@ -84,9 +85,10 @@ public class SourceController {
         }
     }
 
-    @RequestMapping("/selectVillageInfo")
-    public String selectVillageInfo() {
-        List<VillageNotice> records = sourceService.selectVillageInfo();
+    @RequestMapping("/selectNoticeByMenu")
+    public String selectNoticeByMenu(HttpServletRequest request) {
+        String menu = request.getParameter("menu");
+        List<VillageNotice> records = sourceService.selectNoticeByMenu(menu);
         return CommonTools.objectToJson(records);
     }
 

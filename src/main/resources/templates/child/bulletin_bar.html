@@ -17,7 +17,10 @@
 <body>
 <div class="mui-content">
     <div class="mui-slider">
-        <div class="mui-slider-item"><a href="#"><img src="http://127.0.0.1:8848/mui-master/examples/hello-mui/images/shuijiao.jpg" /></a></div>
+        <div class="mui-slider-group mui-slider-loop" id="loop">
+        </div>
+        <div class="mui-slider-indicator" id="slider">
+        </div>
     </div>
 
     <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -25,7 +28,7 @@
             <!--<span class="mui-icon mui-icon-home"></span>-->
             <image style="width: 35px" src="../image/housing-authority.png"></image>
             <div class="mui-media-body">房管局</div></a></li>
-        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-5"><a style="margin-right: 30%" href="/goVillageInfo">
+        <li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-5"><a style="margin-right: 30%" href="/goStreetOmmunity">
             <!--<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>-->
             <image style="width: 35px" src="../image/street-ommunity.png"></image>
             <div class="mui-media-body">街道社区</div></a></li>
@@ -40,7 +43,10 @@
     </ul>
 </div>
 
+<script src="../../lib/zui/lib/jquery/jquery.js"></script>
 <script src="../mui/js/mui.min.js"></script>
 <script src="../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/bulletin_ber.js"></script>
+
 </body>
 </html>

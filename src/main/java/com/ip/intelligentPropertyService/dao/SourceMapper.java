@@ -6,6 +6,7 @@ import com.ip.intelligentPropertyService.entity.MenuPictureEntity;
 import com.ip.intelligentPropertyService.entity.VillageNotice;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SourceMapper {
 
@@ -15,5 +16,5 @@ public interface SourceMapper {
 
     FileEntity selectFileByPrimaryKey(String id);
 
-    List<VillageNotice> selectVillageInfo();
+    List<VillageNotice> selectNoticeByMenu(String menu);
 }

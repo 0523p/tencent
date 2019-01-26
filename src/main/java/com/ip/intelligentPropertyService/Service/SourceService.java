@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SourceService {
@@ -28,8 +29,8 @@ public class SourceService {
         return sourceMapper.selectFileByPrimaryKey(id);
     }
 
-    public List<VillageNotice> selectVillageInfo() {
-        return sourceMapper.selectVillageInfo();
+    public List<VillageNotice> selectNoticeByMenu(String menu) {
+        return sourceMapper.selectNoticeByMenu(menu);
     }
 
 }
