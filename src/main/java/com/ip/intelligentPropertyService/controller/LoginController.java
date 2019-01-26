@@ -42,6 +42,12 @@ public class LoginController {
         return "child/questionResult";
     }
 
+    @RequestMapping("/goAnotherPage")
+    public String goAnotherPage(HttpServletRequest request) {
+        String page = request.getParameter("page");
+        return "child/" + page;
+    }
+
     @RequestMapping("/submit")
     public String submit() {
         return "child/test";

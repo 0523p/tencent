@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物业公告</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../mui/css/mui.min.css">
+    <style type="text/css">
+        #list {
+            /*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+            margin-top: -1px;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-content">
+    <ul class="mui-table-view" id="ulobj">
+    </ul>
+</div>
+
+<li class="mui-table-view-cell mui-media" style="display: none;" id="item">
+    <a href="/showPdf?fileId=4aafe593cf404792b2ea50c353d84772" id="href">
+        <div class="mui-table">
+            <div class="mui-table-cell mui-col-xs-10">
+                <img class="mui-media-object mui-pull-left" src="../../image/pdf.jpg">
+                <div class="mui-media-body" id="title">
+                    关于拆迁通知
+                </div>
+                <p class='mui-ellipsis' id="description">拆迁办公室</p>
+            </div>
+            <div class="mui-table-cell mui-col-xs-2 mui-text-right">
+                <span class="mui-h5" style="margin-left: -20%" id="date">2019-01-22</span>
+            </div>
+        </div>
+    </a>
+</li>
+
+<script src="../../lib/zui/lib/jquery/jquery.js"></script>
+<script src="../../mui/js/mui.min.js"></script>
+<script src="../../mui/js/update.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/property.js"></script>
+
+</body>
+</html>
