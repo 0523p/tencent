@@ -90,6 +90,9 @@ public class SourceController {
 
     @RequestMapping("/selectNoticeByMenu")
     public String selectNoticeByMenu(@RequestBody NoticeParamModel paramModel) {
+        /*NoticeParamModel paramModel = new NoticeParamModel();
+        paramModel.setMenu("villageinfo");
+        paramModel.setIndex(0);*/
         List<VillageNotice> records = sourceService.selectNoticeByMenu(paramModel);
         return CommonTools.objectToJson(records);
     }

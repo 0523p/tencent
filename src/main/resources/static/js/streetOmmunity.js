@@ -47,6 +47,10 @@ function pullupRefresh() {
             });
 
             mui('#pullrefresh').pullRefresh().endPullupToRefresh(false);
+
+            mui('body').on('tap','a',function(){
+                document.location.href = this.href;
+            });
         },
         error:function(xhr,type,errorThrown){
             //异常处理；
