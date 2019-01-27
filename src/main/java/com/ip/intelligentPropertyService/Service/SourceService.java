@@ -5,6 +5,7 @@ import com.ip.intelligentPropertyService.entity.CompanyInfo;
 import com.ip.intelligentPropertyService.entity.FileEntity;
 import com.ip.intelligentPropertyService.entity.MenuPictureEntity;
 import com.ip.intelligentPropertyService.entity.VillageNotice;
+import com.ip.intelligentPropertyService.model.NoticeParamModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,8 +30,8 @@ public class SourceService {
         return sourceMapper.selectFileByPrimaryKey(id);
     }
 
-    public List<VillageNotice> selectNoticeByMenu(String menu) {
-        return sourceMapper.selectNoticeByMenu(menu);
+    public List<VillageNotice> selectNoticeByMenu(NoticeParamModel paramModel) {
+        return sourceMapper.selectNoticeByMenu(paramModel);
     }
 
 }

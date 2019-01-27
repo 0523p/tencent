@@ -6,8 +6,11 @@ import com.ip.intelligentPropertyService.entity.CompanyInfo;
 import com.ip.intelligentPropertyService.entity.FileEntity;
 import com.ip.intelligentPropertyService.entity.MenuPictureEntity;
 import com.ip.intelligentPropertyService.entity.VillageNotice;
+import com.ip.intelligentPropertyService.model.NoticeParamModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -86,9 +89,8 @@ public class SourceController {
     }
 
     @RequestMapping("/selectNoticeByMenu")
-    public String selectNoticeByMenu(HttpServletRequest request) {
-        String menu = request.getParameter("menu");
-        List<VillageNotice> records = sourceService.selectNoticeByMenu(menu);
+    public String selectNoticeByMenu(@RequestBody NoticeParamModel paramModel) {
+        List<VillageNotice> records = sourceService.selectNoticeByMenu(paramModel);
         return CommonTools.objectToJson(records);
     }
 

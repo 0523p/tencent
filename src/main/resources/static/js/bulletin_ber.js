@@ -8,7 +8,9 @@ $(function() {
         success:function(data){
             if (data.length < 2) {
                 //小于两张图片 不轮询播放
-                loadPic(data[0]);
+                if (data[0] != null) {
+                    loadPic(data[0]);
+                }
             } else {
                 //按照412341的顺序进行轮播
                 /*var lastItem = data[data.length - 1];

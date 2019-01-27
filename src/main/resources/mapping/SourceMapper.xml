@@ -20,10 +20,11 @@
         where id = #{id}
     </select>
 
-    <select id="selectNoticeByMenu" parameterType="java.lang.String" resultType="com.ip.intelligentPropertyService.entity.VillageNotice">
+    <select id="selectNoticeByMenu" parameterType="com.ip.intelligentPropertyService.model.NoticeParamModel" resultType="com.ip.intelligentPropertyService.entity.VillageNotice">
         select guid, menu, file_id as fileId, title, description, work_unit as workUnit, create_time as createTIME, update_time as updateTime
         from menu_notice
         where menu = #{menu}
         order by create_time desc
+        limit #{index}, 7
     </select>
 </mapper>
